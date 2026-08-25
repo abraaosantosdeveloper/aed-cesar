@@ -10,7 +10,7 @@ typedef struct Node {
 void printList(Node* list){
     Node* temp1 = list;
     while(temp1){
-        cout << temp1->data << "->";
+        cout << temp1->data << " -> ";
         temp1 = temp1->nextValue;
     }
 
@@ -22,6 +22,22 @@ Node* insertInStart(Node* list, int value){
     newValue->data = value;
     newValue->nextValue = list;
     return newValue;
+}
+
+Node* insertInMiddle(Node* list, int newValue, int searchValue){
+    Node* newValueNode = new Node;
+    newValueNode->data = newValue;
+    
+    Node* temp = list;
+    while(temp->nextValue && temp->nextValue->data != searchValue){
+        temp = temp->nextValue;
+    }
+
+    newValueNode->nextValue = temp->nextValue;
+    temp->nextValue = newValueNode;
+
+    delete temp;
+    return list;
 }
 
 Node* insertInEnd(Node* list, int value){
@@ -38,6 +54,7 @@ Node* insertInEnd(Node* list, int value){
         temp = temp->nextValue;
     temp->nextValue = newValue;
 
+    delete temp;
     return list;
 }
 
