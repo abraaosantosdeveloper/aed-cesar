@@ -1,1 +1,3 @@
 # Circulares
+
+Arquivos de encadeamentos circulares estão neste diretório...

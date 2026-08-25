@@ -1,1 +1,3 @@
 # Encadeamento Duplo
+
+Arquivos de encadeamento duplo estão neste diretório...

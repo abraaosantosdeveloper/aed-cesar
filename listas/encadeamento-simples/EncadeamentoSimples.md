@@ -1,1 +1,3 @@
 # Encadeamento Simples
+
+Arquivos de encadeamento simples estão neste diretório...
