@@ -4,12 +4,12 @@ using namespace std;
 
 typedef struct Node {
     char data[50];
-    Node* nextValue;
+    struct Node* nextValue;
 } Node;
 
 typedef struct Queue {
-    Node* beginning;
-    Node* end;
+    struct Node* beginning;
+    struct Node* end;
 } Queue;
 
 int main(){
