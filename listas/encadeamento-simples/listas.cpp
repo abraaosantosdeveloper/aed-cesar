@@ -2,14 +2,17 @@
 
 using namespace std;
 
-typedef struct Node {
+typedef struct Node
+{
     int data;
-    struct Node* nextValue;
+    struct Node *nextValue;
 } Node;
 
-void printList(Node* list){
-    Node* temp1 = list;
-    while(temp1){
+void printList(Node *list)
+{
+    Node *temp1 = list;
+    while (temp1)
+    {
         cout << temp1->data << " -> ";
         temp1 = temp1->nextValue;
     }
@@ -17,50 +20,53 @@ void printList(Node* list){
     cout << "NULL \n";
 }
 
-Node* insertInStart(Node* list, int value){
-    Node* newValue = new Node;
+Node *insertInStart(Node *list, int value)
+{
+    Node *newValue = new Node;
     newValue->data = value;
     newValue->nextValue = list;
     return newValue;
 }
 
-Node* insertInMiddle(Node* list, int newValue, int searchValue){
-    Node* newValueNode = new Node;
+Node *insertInMiddle(Node *list, int newValue, int searchValue)
+{
+    Node *newValueNode = new Node;
     newValueNode->data = newValue;
-    
-    Node* temp = list;
-    while(temp->nextValue && temp->nextValue->data != searchValue){
+
+    Node *temp = list;
+    while (temp->nextValue && temp->nextValue->data != searchValue)
+    {
         temp = temp->nextValue;
     }
 
     newValueNode->nextValue = temp->nextValue;
     temp->nextValue = newValueNode;
 
-    delete temp;
     return list;
 }
 
-Node* insertInEnd(Node* list, int value){
-    Node* newValue = new Node;
+Node *insertInEnd(Node *list, int value)
+{
+    Node *newValue = new Node;
     newValue->data = value;
     newValue->nextValue = NULL;
 
-    if(!list){
+    if (!list)
+    {
         return newValue;
     }
 
-    Node* temp = list;
-    while(temp->nextValue)
+    Node *temp = list;
+    while (temp->nextValue)
         temp = temp->nextValue;
     temp->nextValue = newValue;
 
-    delete temp;
     return list;
 }
 
-
-int main(){
-    Node* list = NULL;
+int main()
+{
+    Node *list = NULL;
 
     list = insertInEnd(list, 10);
     list = insertInEnd(list, 20);
