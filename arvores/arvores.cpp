@@ -72,7 +72,7 @@ int main()
 {
     Node *root = NULL;
 
-    int listaTestes[] = {50, 30, 20, 40, 70, 60, 80};
+    int listaTestes[] = {20, 10, 30, 5, 15, 25, 35};
 
     int tamanho = sizeof(listaTestes) / sizeof(listaTestes[0]);
 
